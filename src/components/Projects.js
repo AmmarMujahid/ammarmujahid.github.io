@@ -4,6 +4,59 @@ import { Button } from "./Button";
 import Image from "next/image";
 import ProjectsCard from "./ProjectsCard";
 
+const projectsData = [
+  {
+    item: (
+      <ProjectsCard
+        picture="/images/portfolio.png"
+        title="Portfolio"
+        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
+      />
+    ),
+    id: 1,
+  },
+  {
+    item: (
+      <ProjectsCard
+        picture="/images/localhost.png"
+        title="Localhost"
+        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
+      />
+    ),
+    id: 1,
+  },
+  {
+    item: (
+      <ProjectsCard
+        picture="/images/healnet.png"
+        title="Healnet"
+        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
+      />
+    ),
+    id: 1,
+  },
+  {
+    item: (
+      <ProjectsCard
+        picture="/images/digitalmarketing.png"
+        title="Digital Marketing"
+        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
+      />
+    ),
+    id: 1,
+  },
+  {
+    item: (
+      <ProjectsCard
+        picture="/images/themathematicsoutlet.png"
+        title="The Mathematics Outlet"
+        description="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
+      />
+    ),
+    id: 1,
+  },
+];
+
 const Projects = () => {
   return (
     <section className="container mx-auto my-12" id="project">
@@ -29,33 +82,10 @@ const Projects = () => {
         </div>
 
         <div className="grid grid-cols-3 gap-x-24">
-          <ProjectsCard
-            picture="/images/portfolio.png"
-            title="Portfolio"
-            description="Lorem ipsum dolor, sit amet consectetur adipisicing elit." 
-          />
-          <ProjectsCard
-            picture="/images/localhost.png"
-            title="Localhost"
-            description="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
-          />
-          <ProjectsCard
-            picture="/images/healnet.png"
-            title="Healnet"
-            description="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
-          />
-          <ProjectsCard
-            picture="/images/digitalmarketing.png"
-            title="Digital Marketing"
-            description="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
-          />
-          <ProjectsCard
-            picture="/images/themathematicsoutlet.png"
-            title="The Mathematics Outlet"
-            description="Lorem ipsum dolor, sit amet consectetur adipisicing elit."
-          />
+          {projectsData.map((data) => (
+            <div>{data.item}</div>
+          ))}
         </div>
-
         <div>
           <Button intent="primary" size="small">
             View all Projects
