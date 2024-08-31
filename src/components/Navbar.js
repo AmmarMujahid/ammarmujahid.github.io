@@ -3,8 +3,6 @@ import { useState } from "react";
 import Image from "next/image";
 import { Button } from "./Button";
 import { DarkMode, LightMode, MenuClose, MenuOpen } from "./Assets";
-import { setCookie } from "cookies-next";
-import { THEME_KEY } from "@/lib/theme";
 
 const navLinks = [
   { title: "About", id: "#about" },
@@ -14,12 +12,6 @@ const navLinks = [
 
 const Navbar = () => {
   const toggleDarkMode = () => {
-    const html = document.body.parentElement;
-    if (html.classList.contains("dark")) {
-      setCookie(THEME_KEY, "light");
-    } else {
-      setCookie(THEME_KEY, "dark");
-    }
     html.classList.toggle("dark");
   };
 

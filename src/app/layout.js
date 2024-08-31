@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { cookies } from "next/headers";
-import { DEFAULT_THEME, THEME_KEY } from "@/lib/theme";
+import { DEFAULT_THEME } from "@/lib/theme";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,9 +10,9 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const theme = cookies().get(THEME_KEY);
+
   return (
-    <html lang="en" className={theme?.value ?? DEFAULT_THEME}>
+    <html lang="en" className={DEFAULT_THEME}>
       <body className={`inter.className bg-[#F0F0F4] dark:bg-primary-darkest `}>
         {children}
       </body>
